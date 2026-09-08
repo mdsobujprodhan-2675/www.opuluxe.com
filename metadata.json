@@ -1,0 +1,6 @@
+{
+  "name": "Opuluxe - Luxury Online Shopping",
+  "description": "An exclusive, high-end luxury shopping platform where users can browse prestigious collections, search, add, edit, and delete premium products, manage their cart, and checkout.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

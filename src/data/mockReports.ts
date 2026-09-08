@@ -1,0 +1,122 @@
+import { Order, CustomerReportIssue } from '../types';
+import { INITIAL_PRODUCTS } from './mockProducts';
+
+const now = Date.now();
+const day = 24 * 60 * 60 * 1000;
+
+export const INITIAL_ORDERS: Order[] = [
+  {
+    id: 'OPULUXE-892140',
+    items: [
+      { productId: INITIAL_PRODUCTS[0].id, product: INITIAL_PRODUCTS[0], quantity: 1 },
+      { productId: INITIAL_PRODUCTS[5].id, product: INITIAL_PRODUCTS[5], quantity: 2 },
+    ],
+    subtotal: 34500 + 1300 * 2,
+    discountAmount: 7420,
+    deliveryFee: 0,
+    totalAmount: 29680,
+    customerName: 'Tanvir Ahmed',
+    phone: '+880 1711-234567',
+    address: 'House 42, Road 11, Banani',
+    city: 'Dhaka',
+    paymentMethod: 'bkash',
+    status: 'Delivered',
+    createdAt: now - day * 1,
+  },
+  {
+    id: 'OPULUXE-741982',
+    items: [
+      { productId: INITIAL_PRODUCTS[1].id, product: INITIAL_PRODUCTS[1], quantity: 1 },
+    ],
+    subtotal: 94999,
+    discountAmount: 0,
+    deliveryFee: 0,
+    totalAmount: 94999,
+    customerName: 'Farhana Rahman',
+    phone: '+880 1819-876543',
+    address: 'Avenue 5, Block C, Bashundhara R/A',
+    city: 'Dhaka',
+    paymentMethod: 'card',
+    status: 'Shipped',
+    createdAt: now - day * 2,
+  },
+  {
+    id: 'OPULUXE-632014',
+    items: [
+      { productId: INITIAL_PRODUCTS[3].id, product: INITIAL_PRODUCTS[3], quantity: 1 },
+      { productId: INITIAL_PRODUCTS[4].id, product: INITIAL_PRODUCTS[4], quantity: 1 },
+    ],
+    subtotal: 12500 + 6800,
+    discountAmount: 3860,
+    deliveryFee: 0,
+    totalAmount: 15440,
+    customerName: 'Kazi Mahmudul',
+    phone: '+880 1912-334455',
+    address: 'Plot 18, GEC Circle',
+    city: 'Chittagong',
+    paymentMethod: 'cod',
+    status: 'Confirmed',
+    createdAt: now - day * 3,
+  },
+  {
+    id: 'OPULUXE-512998',
+    items: [
+      { productId: INITIAL_PRODUCTS[2].id, product: INITIAL_PRODUCTS[2], quantity: 1 },
+    ],
+    subtotal: 16500,
+    discountAmount: 0,
+    deliveryFee: 0,
+    totalAmount: 16500,
+    customerName: 'Nusrat Jahan',
+    phone: '+880 1678-901234',
+    address: 'Sector 3, Uttara',
+    city: 'Dhaka',
+    paymentMethod: 'bkash',
+    status: 'Delivered',
+    createdAt: now - day * 5,
+  },
+  {
+    id: 'OPULUXE-401923',
+    items: [
+      { productId: INITIAL_PRODUCTS[7].id, product: INITIAL_PRODUCTS[7], quantity: 2 },
+    ],
+    subtotal: 8500 * 2,
+    discountAmount: 3400,
+    deliveryFee: 0,
+    totalAmount: 13600,
+    customerName: 'Sakib Chowdhury',
+    phone: '+880 1521-445566',
+    address: 'Zindabazar, Sylhet',
+    city: 'Sylhet',
+    paymentMethod: 'card',
+    status: 'Pending',
+    createdAt: now - Math.round(day * 0.3),
+  },
+];
+
+export const INITIAL_REPORT_ISSUES: CustomerReportIssue[] = [
+  {
+    id: 'RPT-101',
+    orderId: 'OPULUXE-741982',
+    customerName: 'Farhana Rahman',
+    contact: '+880 1819-876543',
+    category: 'delivery_delay',
+    subject: 'Request for Courier Tracking Number',
+    details: 'Customer requested direct courier AWB number to schedule priority delivery time.',
+    priority: 'Medium',
+    status: 'Under Review',
+    createdAt: now - day * 1,
+  },
+  {
+    id: 'RPT-102',
+    orderId: 'OPULUXE-892140',
+    customerName: 'Tanvir Ahmed',
+    contact: '+880 1711-234567',
+    category: 'general_feedback',
+    subject: 'Compliment on White-Glove Packaging',
+    details: 'Customer praised the premium golden ribbon and velvet packaging box of the Sony headphones.',
+    priority: 'Low',
+    status: 'Resolved',
+    createdAt: now - day * 2,
+  },
+];
